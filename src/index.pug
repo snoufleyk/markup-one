@@ -1,0 +1,14 @@
+extend pug/layout/_base.pug
+
+block head
+    +meta('title', 'Some meta title')
+
+block title
+    title title
+
+block header
+    include pug/layout/_header
+block content
+
+block footer
+    include pug/layout/_footer

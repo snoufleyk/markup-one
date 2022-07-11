@@ -1,0 +1,21 @@
+@use "../abstracts/_colors" as clr
+
+.btn
+    display: inline-block
+    height: 50px
+    background-color: transparent
+    border: 1px solid clr.$amoled
+    border-radius: 4px
+    padding: 10px 20px
+    color: clr.$white
+    cursor: pointer
+
+.btn.btn--line
+    border: 2px solid clr.$white
+    font-weight: 600
+    transition: all 0.25s ease-in-out
+
+    &:hover
+        background-color: clr.$white
+        color: clr.$amoled
+        transition: all 0.25s
