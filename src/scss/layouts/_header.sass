@@ -1,2 +1,115 @@
-@use "../abstracts/_colors" as clr
+@use "../abstracts/_colors" as color
+@use "../abstracts/_burger"
+@use "../abstracts/_font" as font
 @use "../vendors/_smartgrid" as grid
+
+.header
+	background-color: color.$dark-background
+	border-bottom: 1px solid color.$dark-background
+
+	// layout
+	&__inner
+		display: flex
+		padding: 16px 0
+
+	&__left,
+	&__right
+		flex: 0 0 auto
+		max-width: 50%
+
+	&__center
+		flex: 1 1 100%
+		max-width: 100%
+
+	// LEFT
+	&__logo
+		display: flex
+		align-items: center
+		color: color.$light
+		font-size: font.$h4
+
+		.svg-symb
+			width: 46px
+			height: 43px
+			display: block
+			margin-right: 17px
+		
+		span
+			padding-top: 8px
+			letter-spacing: 0.035em
+
+	// CENTER
+	&__nav
+		@include grid.lg-block
+			display: none
+			position: absolute
+			top: 80px
+			left: 0
+			background-color: color.$dark-background
+			width: 100%
+			height: calc(100vh - 80px)
+			text-align: center
+			border-top: 1px solid color.$dark-accent
+
+		&.is--open
+			@include grid.lg-block
+				display: block
+
+	&__menu
+		list-style: none
+		display: flex
+		margin-left: 159px
+		margin-top: 16px
+		@include grid.xl-block
+			margin-left: 120px
+		@include grid.lg-block
+			margin-left: 0
+			margin-top: 20%
+			display: block
+			margin-bottom: 40px
+
+		li:not(:last-child)
+			margin-right: 104px
+			@include grid.xl-block
+				margin-right: 60px
+			@include grid.lg-block
+				margin-right: 0
+				margin-bottom: 40px
+		
+		a
+			color: color.$light
+			display: block
+			font-size: font.$text
+			transition: all 0.25s ease-in-out
+			@include grid.lg-block
+				font-size: font.$h4
+				display: inline-block
+			&:hover
+				color: color.$dark-accent
+				transition: all 0.25s ease-in-out
+		
+	.sm--show
+		display: none
+		@include grid.sm-block
+			display: inline-block
+
+	// RIGHT
+	&__right
+		display: flex
+		align-items: center
+
+	&__actions
+		@include grid.sm-block
+			display: none
+
+	&__burger
+		padding: 14px 15px
+		border: 1px solid transparentize(color.$light, 0.70)
+		border-radius: 6px
+		width: 48px
+		height: 48px
+		margin-left: 30px
+		display: none
+		cursor: pointer
+		@include grid.lg-block
+			display: block

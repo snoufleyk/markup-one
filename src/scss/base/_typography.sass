@@ -7,6 +7,8 @@ body
 	-moz-osx-font-smoothing: grayscale
 	font:
 		weight: 400
+		size: font.$text
+		family: font.$family
 
 h1,
 h2,
@@ -15,7 +17,7 @@ h4,
 h5,
 h6
 	line-height: 1.5
-	font-weight: 700
+	font-weight: 800
 	margin: 0
 
 p,
@@ -27,3 +29,16 @@ li
 
 a
 	text-decoration: none
+
+.heading
+
+	&--xl
+		font-size: font.$h1
+	&--lg
+		font-size: font.$h2	
+	&--md
+		font-size: font.$h3
+	&--sm
+		font-size: font.$h4
+	&--xs
+		font-size: font.$h5

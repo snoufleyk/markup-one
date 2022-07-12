@@ -1,5 +1,15 @@
 mixin meta(name, content)
     meta(name=name content=content)
 
-//- mixin icon(remixClass)
-    i.svg(class="ri-" + remixClass)
+//- SVG Sprite
+mixin icon(name)
+    -
+        let className = 'svg-' + name + '-sn';
+        let attr = '#' + name;
+    svg.svg-symb(class=className)
+        use(xlink:href=attr)
+
+// Retina images
+mixin retina(basePath, img, img2x, width, height, alt, modClass)
+    img(srcset=basePath + img + ', ' + basePath + img2x + ' 1.5x'
+        src=basePath + img width=width height=height alt=alt class=modClass)

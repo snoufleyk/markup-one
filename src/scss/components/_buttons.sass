@@ -1,21 +1,24 @@
-@use "../abstracts/_colors" as clr
+@use "../abstracts/_colors" as color
+@use "../abstracts/_font" as font
 
 .btn
-    display: inline-block
-    height: 50px
-    background-color: transparent
-    border: 1px solid clr.$amoled
-    border-radius: 4px
-    padding: 10px 20px
-    color: clr.$white
-    cursor: pointer
+	display: inline-block
+	height: 48px
+	background-color: transparent
+	border: 1px solid transparentize(color.$light, 0.70)
+	border-radius: 6px
+	padding: 14px 35px
+	color: color.$white
+	cursor: pointer
+	font-size: font.$text-small
+	font-weight: 900
 
-.btn.btn--line
-    border: 2px solid clr.$white
-    font-weight: 600
-    transition: all 0.25s ease-in-out
+.btn.btn--bordered
+	border: 1px solid transparentize(color.$light, 0.70)
+	font-weight: 900
+	transition: all 0.25s ease-in-out
 
-    &:hover
-        background-color: clr.$white
-        color: clr.$amoled
-        transition: all 0.25s
+	&:hover
+		background-color: color.$dark-accent
+		border-color: color.$dark-accent
+		transition: all 0.25s ease-in-out

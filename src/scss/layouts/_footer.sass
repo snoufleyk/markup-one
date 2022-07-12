@@ -1,0 +1,134 @@
+@use "../abstracts/_colors" as color
+@use "../abstracts/_font" as font
+@use "../vendors/_smartgrid" as grid
+
+.footer
+	background-color: color.$light-background
+
+	// TOP
+	&__top
+		display: flex
+		border-bottom: 1px solid color.$light-border
+		padding-top: 208px
+		padding-bottom: 72px
+		@include grid.md-block
+			flex-direction: column
+			align-items: center
+	
+	&__left
+		@include grid.md-block
+			margin-bottom: 50px
+
+	&__logo 
+		margin-bottom: 8px
+		a
+			color: color.$dark
+
+	&__center
+		flex: 1 1 100%
+		display: flex
+		padding-left: 194px
+		padding-top: 16px
+		@include grid.lg-block
+			padding-left: 0
+			justify-content: center
+			padding-top: 0
+		@include grid.md-block
+			margin-bottom: 52px
+		@include grid.xs-block
+			flex-direction: column
+			align-items: center
+			text-align: center
+
+	&__menu
+		&:not(:last-child)
+			margin-right: 232px
+			@include grid.lg-block
+				margin-right: 100px
+			@include grid.xs-block
+				margin-right: 0
+				margin-bottom: 48px
+
+		&-title
+			margin-bottom: 24px
+
+			.heading
+				color: color.$dark-accent
+				font-weight: 400
+				letter-spacing: 0.2em
+
+		ul
+			list-style: none
+
+		li
+			&:not(:last-child)
+				margin-bottom: 8px
+
+			a
+				color: color.$dark
+				transition: all 0.25s ease-in-out
+
+				&:hover
+					color: color.$dark-accent
+					transition: all 0.25s ease-in-out
+	
+	&__socials
+		list-style: none
+		display: flex
+
+		li
+			&:not(:last-child)
+				margin-right: 8px
+
+		a
+			display: block
+			background-color: color.$dark-accent
+			width: 48px
+			height: 48px
+			border-radius: 50%
+			display: flex
+			align-items: center
+			justify-content: center
+			transition: all 0.25s ease-in-out
+			&:hover
+				background-color: color.$dark-background
+				transition: all 0.25s ease-in-out
+
+
+			.svg-symb
+				width: 16px
+				height: 16px
+
+	// Bottom
+	&__bottom
+		display: flex
+		justify-content: space-between
+		padding: 47px 0 56px
+		@include grid.md-block
+			display: block
+			text-align: center
+
+	&__copyright
+		color: color.$dark-gray
+		@include grid.md-block
+			max-width: 200px
+			margin: 0 auto 32px
+
+	&__terms
+		ul
+			list-style: none
+			display: flex
+			@include grid.md-block
+				justify-content: center
+
+			li
+				&:not(:last-child)
+					margin-right: 68px
+
+			a
+				color: color.$dark
+				transition: all 0.25s ease-in-out
+
+				&:hover
+					color: color.$dark-accent
+					transition: all 0.25s ease-in-out

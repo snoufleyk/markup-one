@@ -1,1 +1,25 @@
 header.header#header
+    .container
+        .header__inner
+            .header__left
+                a(href="#").logo.header__logo
+                    +icon('logo')
+                    span Webflow
+            .header__center
+                nav.header__nav
+                    ul.header__menu
+                        li
+                            a(href="#") About
+                        li
+                            a(href="#") Services
+                        li
+                            a(href="#") Pricing
+                        li
+                            a(href="#") Blog
+                    .sm--show
+                        a(href="#").btn.btn--bordered CONTACT
+            .header__right
+                .header__actions
+                    a(href="#").btn.btn--bordered CONTACT
+                .header__burger.js-burger
+                    a(href="#").burger
