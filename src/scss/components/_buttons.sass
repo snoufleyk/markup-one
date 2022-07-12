@@ -1,24 +1,36 @@
 @use "../abstracts/_colors" as color
 @use "../abstracts/_font" as font
+@use "../vendors/_smartgrid" as grid
 
 .btn
 	display: inline-block
 	height: 48px
-	background-color: transparent
-	border: 1px solid transparentize(color.$light, 0.70)
+	background-color: color.$dark-accent
+	border: 1px solid color.$dark-accent
 	border-radius: 6px
-	padding: 14px 35px
-	color: color.$white
+	color: color.$light
 	cursor: pointer
 	font-size: font.$text-small
 	font-weight: 900
+	padding: 14px 21px
+	letter-spacing: 0.015em
+	transition: all 0.25s ease-in-out
+	@include grid.xs-block
+		padding: 14px
+	&:hover
+		background-color: color.$dark-primary
+		border-color: color.$dark-primary
+		transition: all 0.25s ease-in-out
 
 .btn.btn--bordered
 	border: 1px solid transparentize(color.$light, 0.70)
 	font-weight: 900
 	transition: all 0.25s ease-in-out
+	padding: 14px 35px
+	background-color: transparent
 
 	&:hover
 		background-color: color.$dark-accent
 		border-color: color.$dark-accent
 		transition: all 0.25s ease-in-out
+		color: color.$light

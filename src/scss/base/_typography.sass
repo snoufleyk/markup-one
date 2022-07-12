@@ -1,4 +1,5 @@
 @use "../abstracts/_font" as font
+@use "../vendors/_smartgrid" as grid
 
 html,
 body
@@ -34,8 +35,21 @@ a
 
 	&--xl
 		font-size: font.$h1
+		line-height: 1.11
+		letter-spacing: -0.028em
+		@include grid.xl-block
+			font-size: font.$h2
+			line-height: 1.3
+		@include grid.xs-block
+			font-size: font.$h3
 	&--lg
 		font-size: font.$h2	
+		letter-spacing: -0.02em
+		line-height: 1.15
+		@include grid.lg-block
+			line-height: 1.4
+		@include grid.sm-block
+			font-size: font.$h3
 	&--md
 		font-size: font.$h3
 	&--sm

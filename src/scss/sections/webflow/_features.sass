@@ -1,0 +1,107 @@
+@use "../../abstracts/_colors" as color
+@use "../../abstracts/_font" as font
+@use "../../vendors/_smartgrid" as grid
+
+.features
+	background-color: color.$dark-background
+
+	&__inner
+		@include grid.row-flex()
+		padding: 111px 0
+		@include grid.xl-block
+			align-items: center
+		@include grid.lg-block
+			justify-content: center
+		@include grid.sm-block
+			padding: 60px 0
+	
+	&__left
+		@include grid.col()
+		@include grid.size(5)
+		@include grid.size-lg(9.5)
+		@include grid.size-md(12)
+		padding-top: 48px
+		@include grid.xl-block
+			padding-top: 0
+		@include grid.lg-block
+			margin-bottom: 40px
+	&__right
+		@include grid.col()
+		@include grid.size(7)
+		@include grid.size-lg(9.5)
+		@include grid.size-md(12)
+		display: flex
+		align-items: flex-end
+		@include grid.sm-block
+			// display: block
+			flex-direction: column
+			align-items: flex-start
+
+	&__title
+		margin-bottom: 30px
+		.pre-title
+			margin-bottom: 41px
+			@include grid.md-block
+				margin-bottom: 24px
+
+		.title
+			color: color.$light
+			max-width: 340px
+			@include grid.sm-block
+				max-width: 250px
+
+	&__read-more a
+		color: color.$light
+		transition: all 0.25s ease-in-out
+		border-bottom: 1px solid color.$dark-primary
+		padding-bottom: 5px
+		&:hover
+			color: color.$dark-accent
+			transition: all 0.25s ease-in-out
+
+	&__card
+		&-icon
+			width: 80px
+			height: 80px
+			border-radius: 50%
+			background-color: color.$dark-accent
+			padding: 24px
+			margin-bottom: 40px
+
+			.svg-symb
+				color: color.$light
+		
+		&-title
+			margin-bottom: 16px
+		
+		&-desc
+			line-height: 2
+
+	&--vertical
+		background-color: color.$light
+		padding: 48px 50px 52px 48px
+		border-radius: 6px 6px 0 6px
+		@include grid.xl-block
+			padding: 30px
+		@include grid.sm-block
+			border-radius: 6px 6px 0 0
+			width: 70%
+		@include grid.xs-block
+			width: 100%
+
+	&--horizontal
+		padding: 103px 49px 51px 47px
+		border-radius: 0 6px 6px 0
+		border: 1px solid color.$dark-border
+		color: color.$light
+		border-left: 0
+		@include grid.xl-block
+			padding: 60px 30px 30px
+		@include grid.sm-block
+			border-left: 1px solid color.$dark-border
+			// border-top: 0
+			border-radius: 0 0 6px 6px
+			width: 75%
+			align-self: flex-end
+		@include grid.xs-block
+			width: 100%

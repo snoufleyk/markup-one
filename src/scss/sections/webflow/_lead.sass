@@ -1,0 +1,75 @@
+@use "../../abstracts/_colors" as color
+@use "../../abstracts/_font" as font
+@use "../../vendors/_smartgrid" as grid
+
+.lead.lead--webflow
+	background-color: color.$dark-background
+
+	.lead
+		&__inner
+			@include grid.row-flex()
+			padding: 96px 0 100px
+			border-bottom: 1px solid color.$dark-border
+			@include grid.xl-block
+				padding: 60px 0
+				align-items: center
+			@include grid.lg-block
+				justify-content: center
+		&__content
+			@include grid.col()
+			@include grid.size(6)
+			@include grid.size-lg(9)
+			@include grid.size-sm(12)
+			margin-top: 94px
+			@include grid.xl-block
+				margin-top: 0
+				margin-bottom: 80px
+		&__media
+			@include grid.col()
+			@include grid.size(6)
+			@include grid.size-lg(9)
+			@include grid.size-sm(12)
+			@include grid.lg-block
+				img
+					margin: 0 auto
+
+		&__title
+			margin-bottom: 23px
+			@include grid.lg-block
+				text-align: center
+			.pre-title
+				margin-bottom: 29px
+
+			.title
+				color: color.$light
+		
+		&__desc
+			margin-bottom: 36px
+			max-width: 440px
+			line-height: 2
+			@include grid.lg-block
+				text-align: center
+				margin-left: auto
+				margin-right: auto
+			@include grid.xs-block
+				margin-bottom: 24px
+			p
+				color: color.$light-gray
+		
+		&__actions
+			display: flex
+			align-items: center
+			@include grid.lg-block
+				justify-content: center
+
+			.btn
+				margin-right: 46px
+				@include grid.sm-block
+					margin-right: 24px
+			
+			a:not(.btn)
+				color: color.$light
+				transition: all 0.25s ease-in-out
+				&:hover
+					transition: all 0.25s ease-in-out
+					color: color.$light-accent
