@@ -1,0 +1,50 @@
+@use "../../abstracts/_colors" as color
+@use "../../abstracts/_font" as font
+@use "../../vendors/_smartgrid" as grid
+
+.webflow
+	background-color: color.$dark-background
+	&__inner
+		@include grid.row-flex()
+		padding: 86px 0
+		@include grid.xl-block
+			align-items: center
+		@include grid.lg-block
+			justify-content: center
+		@include grid.sm-block
+			padding: 60px 0
+
+	&__media
+		@include grid.col()
+		@include grid.size(7)
+		@include grid.size-lg(9)
+		@include grid.size-sm(12)
+		@include grid.lg-block
+			margin-bottom: 40px
+
+	&__content
+		@include grid.col()
+		@include grid.size(5)
+		@include grid.size-lg(9)
+		@include grid.size-sm(12)
+		padding-top: 75px
+		@include grid.xl-block
+			padding-top: 0
+
+	&__title
+		margin-bottom: 26px
+		.pre-title
+			margin-bottom: 25px
+		.title
+			color: color.$light
+
+	&__subtitle
+		color: color.$light
+		font-size: font.$text-big
+		margin-bottom: 18px
+
+	&__text
+		line-height: 2
+		margin-bottom: 36px
+		p
+			color: color.$light-gray
